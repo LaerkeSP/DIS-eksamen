@@ -1,0 +1,3 @@
+{"reservationID":"6f79144a-d005-49da-a6ea-72ef3c513a59","clientID":234,"date":"dato","hotelName":"dato","price":"trivago","balance":1000,"_id":"4EVvehvHvZGwGey5"}
+{"$$deleted":true,"_id":"4EVvehvHvZGwGey5"}
+{"reservationID":"6f79144a-d005-49da-a6ea-72ef3c513a59","clientID":4444,"date":"dato","hotelName":"hotel","price":1000,"balance":0,"_id":"jDKov3Yc1cdu3pUl"}
