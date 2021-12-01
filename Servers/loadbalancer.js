@@ -25,6 +25,10 @@ let urls = [
     }
 ];
 
+// server.use('/client', function(){
+//     console.log('hello')
+// })
+
 loadBalancer = server.get('*', function(req, res) {
     let servers = {
         target: urls.shift()
