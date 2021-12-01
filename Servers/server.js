@@ -1,23 +1,18 @@
 const express = require('express');
 const server = express();
 let clientRoutes = require("./Routes/clientRoutes.js");
+let reservationRoutes = require("./Routes/reservationRoutes.js");
 
 var host = "localhost";
 let port = process.argv.splice(2)[0];
 
-// DER SKAL IMPORTERES ROUTES OG DE SKAL INKLUDERES I .USE FUNKTIONERNE
-
 server.use(express.json());
-// server.use(express.urlencoded());
-
 
 // --------------- Client ------------------
 server.use('/client', clientRoutes);
 
 // --------------- Reservation -------------
-server.use('/reservation', function(){
-    console.log('we still need the connection to the routes!')
-});
+server.use('/reservation', reservationRoutes);
 
 
 server.get('/', (req, res) => { 

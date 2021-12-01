@@ -1,7 +1,7 @@
-var express = require('express')
-var router = express.Router()
+var express = require('express');
+var router = express.Router();
 
-const { getClients, postClient, getClient, deleteClient, patchClient } = require("../Controller/clientController.js")
+const { getClients, postClient, getClient, deleteClient, patchClient } = require("../Controller/clientController.js");
 
 // ---------- without id --------------
 router.get("/", getClients);

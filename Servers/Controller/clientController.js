@@ -1,5 +1,4 @@
 const { Client } = require('../../Clases/Client.js');
-const { patchingClient } = require('../../Storage/clientStorage.js');
 var Datastore = require('nedb')
   , db = new Datastore({ filename: '../Storage/clientData.db' });
 

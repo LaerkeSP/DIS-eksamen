@@ -16,7 +16,7 @@ class Reservation{
     }
 
     insertReservation(){
-        insertingReservation(this.reservationID, this.clientID, this.date, this.date, this.hotelName, this.price, this.balance);
+        insertingReservation(this.reservationID, this.clientID, this.date, this.hotelName, this.price, this.balance);
     }
 
     deleteReservation(){
