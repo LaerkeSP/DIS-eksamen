@@ -15,12 +15,11 @@ function getClients(req, res){
 
 function postClient(req, res){
     let clientData = req.body;
-
-    console.log(clientData)
-
-    // let client = new Client(clientData)
-    // client.insertClient();
-    res.send('Client has been added to database')
+    let client = new Client(clientData.firstName, clientData.lastName, clientData.streetAddress, clientData.city);
+    client.insertClient();
+    console.log("Client has been added to the database");
+    console.log(client);
+    res.send('Client has been added to database');
 }
 
 module.exports = {

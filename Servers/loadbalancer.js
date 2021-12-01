@@ -1,6 +1,8 @@
 const express = require('express');
 const server = express();
 let httpProxy = require('http-proxy');
+// server.use(express.json());
+
 let host = 'localhost'
 let port = 3000
 
@@ -25,9 +27,15 @@ let urls = [
     }
 ];
 
-// server.use('/client', function(){
-//     console.log('hello')
-// })
+server.use('/', function(req, res){
+    let servers = {
+        target: urls.shift()
+    };
+
+    console.log(`Load balancer sent request to: http://${servers.target.host}:${servers.target.port}`);
+    proxy.web(req, res, servers);
+    urls.push(servers.target);
+});
 
 loadBalancer = server.get('*', function(req, res) {
     let servers = {
