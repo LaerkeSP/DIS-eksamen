@@ -22,7 +22,22 @@ function postClient(req, res){
     res.send('Client has been added to database');
 }
 
+
+function getClient(req, res){
+    let paramID = req.params;
+    db.loadDatabase()
+    db.find({clientID: paramID.id }, function(err, clientData){
+        let client = new Client(clientData[0].firstName, clientData[0].lastName, clientData[0].streetAddress, clientData[0].city, clientData[0].clientID)
+        console.log("client found:");
+        console.log(client);
+        res.send(client);
+    })
+}
+
+
+
 module.exports = {
     getClients,
-    postClient
+    postClient,
+    getClient
 }
