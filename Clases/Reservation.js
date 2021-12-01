@@ -23,8 +23,8 @@ class Reservation{
         deletingReservation(this.reservationID);
     }
 
-    patchReservation(clientID, date, hotelName, price, balance){
-        patchingReservation(this.reservationID, clientID, date, hotelName, price, balance);
+    patchReservation(){
+        patchingReservation(this.reservationID, this.clientID, this.date, this.hotelName, this.price, this.balance);
     }
 }
 

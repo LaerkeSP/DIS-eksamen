@@ -47,7 +47,6 @@ function deleteClient(req, res){
 function patchClient(req, res){
     let paramID = req.params;
     let newData = req.body;
-    console.log(newData)
     let patchedClient = new Client(newData.firstName, newData.lastName, newData.streetAddress, newData.city, paramID.id);
     patchedClient.patchThisClient();
     console.log("Clients data has been changed to:");
