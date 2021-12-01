@@ -35,9 +35,18 @@ function getClient(req, res){
 }
 
 
+function deleteClient(req, res){
+    let paramID = req.params;
+    let deletedClient = new Client("", "", "", "", paramID.id);
+    deletedClient.deleteThisClient();
+    console.log(`Client with id: ${paramID.id} has been deleted`)
+    res.send(`Client with id: ${paramID.id} has been deleted`)
+}
+
 
 module.exports = {
     getClients,
     postClient,
-    getClient
+    getClient,
+    deleteClient
 }
