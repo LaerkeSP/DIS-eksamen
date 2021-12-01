@@ -18,9 +18,9 @@ class Client{
         deletingClient(this.clientID);
     }
 
-    patchThisClient(firstName, lastName, streetAddress, city){
+    patchThisClient(){
         // note --------- jeg skal lige finde ud af hvordan clientID skal håndteres i dette tilfælde
-        patchingClient(this.clientID , firstName, lastName, streetAddress, city);
+        patchingClient(this.clientID, this.firstName, this.lastName, this.streetAddress, this.city);
     }
 }
 

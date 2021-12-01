@@ -1,4 +1,5 @@
 const { Client } = require('../../Clases/Client.js');
+const { patchingClient } = require('../../Storage/clientStorage.js');
 var Datastore = require('nedb')
   , db = new Datastore({ filename: '../Storage/clientData.db' });
 
@@ -44,9 +45,22 @@ function deleteClient(req, res){
 }
 
 
+function patchClient(req, res){
+    let paramID = req.params;
+    let newData = req.body;
+    console.log(newData)
+    let patchedClient = new Client(newData.firstName, newData.lastName, newData.streetAddress, newData.city, paramID.id);
+    patchedClient.patchThisClient();
+    console.log("Clients data has been changed to:");
+    console.log(patchedClient);
+    res.send("Client has been patched");
+}
+
+
 module.exports = {
     getClients,
     postClient,
     getClient,
-    deleteClient
+    deleteClient, 
+    patchClient
 }
