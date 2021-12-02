@@ -13,5 +13,6 @@ https://github.com/Laerke98SP/Eksamens-Opgave/blob/main/Storage/userData.js
 https://www.npmjs.com/package/nedb#finding-documents
 https://www.youtube.com/watch?v=IQu2k25_wBo
 https://github.com/louischatriot/nedb
+https://www.youtube.com/watch?v=USrMdBF0zcg&t=289s
 
 skriv "npm run all" for at køre pisset

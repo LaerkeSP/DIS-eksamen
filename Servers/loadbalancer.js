@@ -1,7 +1,9 @@
+const fs = require('fs');
+const path = require('path');
 const express = require('express');
 const server = express();
-let httpProxy = require('http-proxy');
-// server.use(express.json());
+const httpProxy = require('http-proxy');
+const https = require('https'); 
 
 let host = 'localhost'
 let port = 3000
@@ -46,6 +48,20 @@ loadBalancer = server.get('*', function(req, res) {
     urls.push(servers.target);
 });
 
-loadBalancer.listen(port, function() {
-    console.log(`Load balancer is listening to: http://${host}:${port}`)
-});
+
+const sslServer = https.createServer({
+    key: fs.readFileSync(path.join(__dirname, '../Encryption', 'key.pem')),
+    cert: fs.readFileSync(path.join(__dirname, '../Encryption', 'cert.pem'))
+}, server);
+
+
+
+sslServer.listen(port, function() {
+    console.log(`Server is listening on: https://${host}:${port}`);
+})
+
+
+
+// loadBalancer.listen(port, function() {
+//     console.log(`Load balancer is listening to: http://${host}:${port}`)
+// });
