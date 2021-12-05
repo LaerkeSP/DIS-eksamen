@@ -1,0 +1,28 @@
+{
+  "name": "dis-eksamen",
+  "version": "1.0.0",
+  "description": "express er downloaded npm install nedb --save  npm install axios",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd Servers && nodemon loadbalancer.js",
+    "server1": "cd Servers && nodemon server.js 3001",
+    "server2": "cd Servers && nodemon server.js 3002",
+    "server3": "cd Servers && nodemon server.js 3003",
+    "server4": "cd Servers && nodemon server.js 3004",
+    "clientRequest": "cd Requests && nodemon clientRequests.js",
+    "all": "npm-run-all --parallel start server1 server2 server3 server4 clientRequest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaerkeSP/DIS-eksamen.git"
+  },
+  "author": "Laerke Stald Pedersen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaerkeSP/DIS-eksamen/issues"
+  },
+  "homepage": "https://github.com/LaerkeSP/DIS-eksamen#readme",
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

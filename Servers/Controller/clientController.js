@@ -6,8 +6,8 @@ var Datastore = require('nedb')
 function getClients(req, res){
     db.loadDatabase()
     db.find({}, function(err, clients){
-        console.log("------------------ Clients found ------------------");
-        console.log(clients);
+        console.log(`------------------ Clients found ------------------ \n`, clients);
+        // console.log(clients);
         res.send(clients);
     })
 }
@@ -17,8 +17,8 @@ function postClient(req, res){
     let clientData = req.body;
     let client = new Client(clientData.firstName, clientData.lastName, clientData.streetAddress, clientData.city);
     client.insertClient();
-        console.log("------------------ Client has been added to the database ------------------");
-    console.log(client);
+        console.log(`------------------ Client has been added to the database ------------------ \n`, client);
+    // console.log(client);
     res.send('Client has been added to database');
 }
 
@@ -28,8 +28,8 @@ function getClient(req, res){
     db.loadDatabase()
     db.find({clientID: paramID.id }, function(err, clientData){
         let client = new Client(clientData[0].firstName, clientData[0].lastName, clientData[0].streetAddress, clientData[0].city, clientData[0].clientID)
-        console.log("------------------ Client found ------------------");
-        console.log(client);
+        console.log(`------------------ Client found ------------------ \n`, client);
+        // console.log(client);
         res.send(client);
     })
 }
@@ -49,8 +49,8 @@ function patchClient(req, res){
     let newData = req.body;
     let patchedClient = new Client(newData.firstName, newData.lastName, newData.streetAddress, newData.city, paramID.id);
     patchedClient.patchThisClient();
-    console.log("------------------ Clients data has been changed ------------------");
-    console.log(patchedClient);
+    console.log(`------------------ Clients data has been changed ------------------ \n`, patchedClient);
+    // console.log(patchedClient);
     res.send("Client has been patched");
 }
 
