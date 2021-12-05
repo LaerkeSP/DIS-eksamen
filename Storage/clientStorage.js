@@ -19,7 +19,10 @@ function deletingClient(clientID){
 function patchingClient(clientID, firstName, lastName, streetAddress, city){
     // let data = {clientID, firstName, lastName, streetAddress, city}
     deletingClient(clientID);
-    insertingClient(clientID, firstName, lastName, streetAddress, city);
+
+    setTimeout(function() {
+        insertingClient(clientID, firstName, lastName, streetAddress, city);
+    }, 1000);
 }
 
 

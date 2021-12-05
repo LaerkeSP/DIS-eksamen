@@ -2,6 +2,7 @@
  
 express er downloaded
 npm install nedb --save 
+npm install axios
 
 note!!! jeg skal lave npm start, der ender med at åbne alle servere (tænker jeg gerne vil have 4)
 
