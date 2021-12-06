@@ -6,8 +6,8 @@ var Datastore = require('nedb')
 function getReservations(req, res){
     db.loadDatabase();
     db.find({}, function(err, reservations){
-        console.log('Reservations found:');
-        console.log(reservations);
+        console.log('------------------ Reservations found ------------------ \n', reservations);
+        // console.log(reservations);
         res.send(reservations);
     })
 }
@@ -18,8 +18,8 @@ function postReservation(req, res){
     let reservation = new Reservation(reservationData.clientID, reservationData.date, reservationData.hotelName, reservationData.price, reservationData.balance);
     reservation.calculateBalance();
     reservation.insertReservation();
-    console.log("Reservation has been added to database");
-    console.log(reservation);
+    console.log("------------------ Reservation has been added to database ------------------ \n", reservation);
+    // console.log(reservation);
     res.send("Reserveation has been added to the database")
 }
 
@@ -28,8 +28,8 @@ function getReservation(req, res){
     db.loadDatabase();
     db.find({reservationID: paramID.id }, function(err, reservationData){
         let reservation = new Reservation(reservationData[0].clientID, reservationData[0].date, reservationData[0].hotelName, reservationData[0].price, reservationData[0].balance, reservationData[0].reservationID)
-        console.log("Reservation found:");
-        console.log(reservation);
+        console.log("------------------ Reservation found ------------------ \n", reservation);
+        // console.log(reservation);
         res.send(reservation);
     })
 }
@@ -38,7 +38,7 @@ function deleteReservation(req, res){
     let paramID = req.params;
     let deletedReservation = new Reservation("", "", "", "", "", paramID.id);
     deletedReservation.deleteReservation();
-    console.log(`Reservation with id: ${paramID.id} has been deleted`)
+    console.log(`------------------ Reservation with id: ${paramID.id} has been deleted ------------------`)
     res.send(`Reservation with id: ${paramID.id} has been deleted`)
 }
 
@@ -48,8 +48,8 @@ function patchReservation(req, res){
     let patchedReservation = new Reservation(newData.clientID, newData.date, newData.hotelName, newData.price, newData.balance, paramID.id);
     patchedReservation.calculateBalance();
     patchedReservation.patchReservation();
-    console.log("Reservation data has been changed to:");
-    console.log(patchedReservation);
+    console.log("------------------ Reservation data has been changed to ------------------ \n", patchedReservation);
+    // console.log(patchedReservation);
     res.send("Reservation has been patched");
 }
 

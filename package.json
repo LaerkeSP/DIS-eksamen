@@ -10,7 +10,8 @@
     "server3": "cd Servers && nodemon server.js 3003",
     "server4": "cd Servers && nodemon server.js 3004",
     "clientRequest": "cd Requests && nodemon clientRequests.js",
-    "all": "npm-run-all --parallel start server1 server2 server3 server4 clientRequest"
+    "reservationRequest": "cd Requests && nodemon reservationRequests.js",
+    "all": "npm-run-all --parallel start server1 server2 server3 server4 clientRequest reservationRequest"
   },
   "repository": {
     "type": "git",

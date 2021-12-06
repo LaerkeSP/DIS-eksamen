@@ -21,7 +21,9 @@ function deletingReservation(reservationID){
 // --------------- patch reservation -----------------------
 function patchingReservation(reservationID, clientID, date, hotelName, price, balance){
     deletingReservation(reservationID);
-    insertingReservation(reservationID, clientID, date, hotelName, price, balance);
+    setTimeout(function() {
+        insertingReservation(reservationID, clientID, date, hotelName, price, balance);
+    }, 1000);
 }
 
 

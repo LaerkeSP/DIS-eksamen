@@ -2,16 +2,15 @@ const axios = require('axios').default;
 const fs = require('fs');
 const https = require('https');
 
-let cert = fs.readFileSync('../Encryption/cert.pem');
-// console.log(cert)
+// getting around self assigned verification
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
+let cert = fs.readFileSync('../Encryption/cert.pem');
 
-// ved ikke om dette er nødendigt ------------------------------------------------------------------
 const httpsAgent = new https.Agent({
     rejectUnauthorized: false,
     cert: cert
-}) 
+}); 
 
 setTimeout(function() {
     axios.all([
