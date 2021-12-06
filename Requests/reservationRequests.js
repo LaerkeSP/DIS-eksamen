@@ -14,9 +14,6 @@ const httpsAgent = new https.Agent({
 
 setTimeout(function() {
     axios.all([
-        axios.get('https://localhost:3000/reservation', { 
-            agent: httpsAgent 
-        }),
         axios.get('https://localhost:3000/reservation/b6367e4a-08b2-4925-aafe-acd708ba0ede', {
             agent: httpsAgent
         }),
@@ -38,6 +35,9 @@ setTimeout(function() {
             hotelName: "hotel basalona",
             price: 14000,
             balance: 1000
+        }),
+        axios.get('https://localhost:3000/reservation', { 
+            agent: httpsAgent 
         })
     ]).then(axios.spread(function (response) {
             // console.log(response);
