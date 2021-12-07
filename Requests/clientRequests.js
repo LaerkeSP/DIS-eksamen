@@ -24,7 +24,7 @@ setTimeout(function() {
             streetAddress: "Villavej",
             city: "Aalborg"
         }),
-        axios.delete('https://localhost:3000/client/90f7657f-322d-4cb2-84ee-6f3c28aef71f', {
+        axios.delete('https://localhost:3000/client/ee84c2cb-238e-4e76-ac46-495842f26b4d', {
             agent: httpsAgent
         }),
         axios.patch('https://localhost:3000/client/733507e2-6c96-4222-9fa3-0245b68cc044', {
@@ -38,7 +38,6 @@ setTimeout(function() {
             agent: httpsAgent 
         })
     ]).then(axios.spread(function (response) {
-            // console.log(response);
         })).catch(function (error) {
             console.log(error);
     });
