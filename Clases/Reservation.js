@@ -5,7 +5,7 @@ class Reservation{
     constructor(clientID, date, hotelName, price, balance, reservationID = v4()){
         this.reservationID = reservationID;
         this.clientID = clientID;
-        this.date = date
+        this.date = date;
         this.hotelName = hotelName;
         this.price = price;
         this.balance = balance;
@@ -26,6 +26,6 @@ class Reservation{
     patchReservation(){
         patchingReservation(this.reservationID, this.clientID, this.date, this.hotelName, this.price, this.balance);
     }
-}
+};
 
 module.exports.Reservation = Reservation;

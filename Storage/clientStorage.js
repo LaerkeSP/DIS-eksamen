@@ -17,7 +17,6 @@ function deletingClient(clientID){
 
 // ---------- patching client ------------------
 function patchingClient(clientID, firstName, lastName, streetAddress, city){
-    // let data = {clientID, firstName, lastName, streetAddress, city}
     deletingClient(clientID);
 
     setTimeout(function() {
