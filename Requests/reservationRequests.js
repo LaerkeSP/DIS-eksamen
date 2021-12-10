@@ -13,21 +13,21 @@ setTimeout(function() {
         // post request that includes the data in the body
         axios.post('https://localhost:3000/reservation', {
             clientID: "926b0758-0a90-43df-ae1b-060ccddbd845",
-            date: "31/12/21",
-            hotelName: "hotel new year",
-            price: 2022,
+            date: "1/1/22",
+            hotelName: "hotel trivago",
+            price: 4410,
             balance: 0
         }),
         // delete request that deletes specific reservation
-        axios.delete('https://localhost:3000/reservation/6a28795e-2827-4f87-ac02-123d441d9b57', {
+        axios.delete('https://localhost:3000/reservation/04ee3f0b-52ae-48d8-9c9a-5174e41a0d9d', {
         }),
         // patch request that patches a specific reservation and includes the changes in the body
-        axios.patch('https://localhost:3000/reservation/b6367e4a-08b2-4925-aafe-acd708ba0ede', {
+        axios.patch('https://localhost:3000/reservation/8ac64476-d2b2-4ab4-bcb9-951779fa7e81', {
             clientID: "733507e2-6c96-4222-9fa3-0245b68cc044",
             date: "30/9/21",
-            hotelName: "hotel basalona",
+            hotelName: "hotel funhouse",
             price: 14000,
-            balance: 1000
+            balance: 23000
         }),
         // get request for all reservations
         axios.get('https://localhost:3000/reservation', {

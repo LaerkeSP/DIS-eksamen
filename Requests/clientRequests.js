@@ -19,7 +19,7 @@ setTimeout(function() {
             city: "Aalborg"
         }),
         // delete request that deletes specific client
-        axios.delete('https://localhost:3000/client/ee84c2cb-238e-4e76-ac46-495842f26b4d', {
+        axios.delete('https://localhost:3000/client/926b0758-0a90-43df-ae1b-060ccddbd845', {
         }),
         // patch request that patches a specific client and includes the changes in the body
         axios.patch('https://localhost:3000/client/733507e2-6c96-4222-9fa3-0245b68cc044', {
